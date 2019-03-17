@@ -4,42 +4,19 @@
     <div class="colorlib-narrow-content">
         <div class="row"></div>
         <div class="row">
-            <div class="col-md-3 text-center animate-box">
-                <span
-                    class="colorlib-counter js-counter"
-                    data-from="0"
-                    data-to="309"
-                    data-speed="5000"
-                    data-refresh-interval="50"></span>
-                <span class="colorlib-counter-label">Cups of coffee</span>
+            
+            @foreach ($data["stats"] as $stat)
+                <div class="col-md-3 text-center animate-box">
+                    <span
+                        class="colorlib-counter js-counter"
+                        data-from="0"
+                        data-to="{{$stat->count}}"
+                        data-speed="5000"
+                        data-refresh-interval="50"></span>
+                    <span class="colorlib-counter-label"> {{$stat->label}}</span>
             </div>
-            <div class="col-md-3 text-center animate-box">
-                <span
-                    class="colorlib-counter js-counter"
-                    data-from="0"
-                    data-to="356"
-                    data-speed="5000"
-                    data-refresh-interval="50"></span>
-                <span class="colorlib-counter-label">Projects</span>
-            </div>
-            <div class="col-md-3 text-center animate-box">
-                <span
-                    class="colorlib-counter js-counter"
-                    data-from="0"
-                    data-to="30"
-                    data-speed="5000"
-                    data-refresh-interval="50"></span>
-                <span class="colorlib-counter-label">Clients</span>
-            </div>
-            <div class="col-md-3 text-center animate-box">
-                <span
-                    class="colorlib-counter js-counter"
-                    data-from="0"
-                    data-to="10"
-                    data-speed="5000"
-                    data-refresh-interval="50"></span>
-                <span class="colorlib-counter-label">Partners</span>
-            </div>
+            @endforeach
+            
         </div>
     </div>
 </div>
